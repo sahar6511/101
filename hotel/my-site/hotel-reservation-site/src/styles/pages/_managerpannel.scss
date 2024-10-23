@@ -1,0 +1,42 @@
+.manager-pannel{
+    &__menu{
+        display: flex;
+        align-items: flex-start;
+        justify-content:flex-start;
+       
+        
+        ul{
+            width: 10%;
+            @include column-flex;
+            text-align: center;
+            // align-items: flex-start;
+            border-radius: 5px;
+            li{
+                width: 100%;
+                background-color: $orange-color;
+                color:$white-color !important;
+                @extend .p-15;
+                &:hover{
+                    background-color: $orange-color-hover;
+                }
+                a{
+                    color:$white-color !important;
+                }
+
+            }
+        }
+    }
+
+
+    .top-menu{
+        background-color: $white-color;
+        a{
+            color: $orange-color;
+        }
+    }
+    .header{
+        background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+    }
+}
+
+
