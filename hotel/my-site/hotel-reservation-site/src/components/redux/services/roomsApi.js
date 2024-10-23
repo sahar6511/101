@@ -11,12 +11,25 @@ export const roomsApi = createApi({
       providesTags: ["rooms"],
     }),
 
+    getLimitRooms:builder.query({
+      query:(page)=>`rooms?_page=${page}&_limit=1`,
+       providesTags: ["rooms"],
+
+    }),
+
     getSpecialRooms: builder.query({
       query: () => "specialRooms",
       providesTags: ["specialRooms"],
     }),
 
+    deleteRoom:builder.mutation({
+      query:(id)=>({
+        url:`rooms/${id}`,
+        method:"DELETE"
+      }),
+      invalidatesTags: ["rooms"],
+    })
   }),
 });
 
-export const { useGetRoomsQuery,useGetSpecialRoomsQuery } = roomsApi;
+export const { useGetRoomsQuery,useGetSpecialRoomsQuery,useGetLimitRoomsQuery,useDeleteRoomMutation } = roomsApi;

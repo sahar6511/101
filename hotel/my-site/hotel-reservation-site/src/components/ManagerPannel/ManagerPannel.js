@@ -39,8 +39,8 @@ const ManagerPannel = () => {
         </li>
 
       </ul>
-    {<Outlet />}
 
+    {<Outlet />}
     </div>
       
 
